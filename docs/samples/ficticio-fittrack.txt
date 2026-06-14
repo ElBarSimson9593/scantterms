@@ -1,0 +1,25 @@
+APLICACIÓN MÓVIL FITTRACK — CONDICIONES DE USO (FICTICIO)
+
+Bienvenido a FitTrack. Al crear una cuenta acepta las siguientes condiciones.
+
+CUENTA GRATUITA
+La versión gratuita incluye seguimiento básico de pasos. Las funciones avanzadas requieren FitTrack Pro.
+
+FITTRACK PRO
+- Precio: $2.990/mes, facturación recurrente.
+- La renovación es automática hasta que el usuario desactive la opción en Ajustes > Cuenta > Suscripciones del dispositivo.
+- No garantizamos que el proceso de baja sea inmediato; pueden generarse cargos adicionales mientras el sistema procesa la solicitud.
+
+DATOS DE SALUD
+FitTrack accede a métricas de salud del dispositivo. Los datos agregados pueden utilizarse para investigación y compartirse con aseguradoras asociadas, siempre que sea legalmente permitido.
+
+La empresa puede actualizar esta cláusula mediante notificación in-app; si continúa usando la app, se entiende aceptada.
+
+CONTENIDO Y RECOMENDACIONES
+Las sugerencias de ejercicio son orientativas. FitTrack no responde por lesiones ni por resultados no alcanzados.
+
+CAMBIOS DEL SERVICIO
+Podemos suspender funciones, alterar precios o terminar el servicio en cualquier región sin compensación.
+
+CONTACTO
+Soporte: soporte@fittrack-demo.example

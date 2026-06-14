@@ -1,0 +1,34 @@
+const SAMPLE_NOVASTREAM = `SERVICIO DE SUSCRIPCIÓN DIGITAL — TÉRMINOS Y CONDICIONES (FICTICIO)
+
+Última actualización: 1 de enero de 2026
+
+1. ACEPTACIÓN
+Al utilizar la plataforma NovaStream, usted acepta estos términos en su totalidad.
+
+2. SUSCRIPCIÓN Y FACTURACIÓN
+El plan Premium tiene un costo promocional de $4.990 mensuales durante los primeros 3 meses. Transcurrido dicho período, la suscripción se renovará automáticamente al precio estándar de $14.990 mensuales, cargado a su método de pago registrado, sin necesidad de confirmación adicional.
+
+Los cargos por procesamiento de pago, impuestos locales y comisiones bancarias pueden aplicarse de forma adicional y no están incluidos en el precio publicado.
+
+3. CANCELACIÓN
+El usuario puede solicitar cancelación a través del formulario de contacto. La cancelación surtirá efecto al término del período de facturación vigente. No se realizarán reembolsos parciales.
+
+Para cancelar antes del próximo cobro, debe enviar solicitud con al menos 30 días de anticipación al ciclo de renovación.
+
+4. PRIVACIDAD Y DATOS
+NovaStream podrá recopilar, almacenar, analizar y compartir datos de uso, historial de navegación, ubicación aproximada y preferencias con socios comerciales y proveedores de publicidad.
+
+Al aceptar estos términos, usted renuncia expresamente a oponerse al tratamiento de sus datos personales conforme a la política interna de la empresa, la cual puede modificarse sin previo aviso.
+
+5. LIMITACIÓN DE RESPONSABILIDAD
+NovaStream no será responsable por interrupciones del servicio, pérdida de datos, daños indirectos o lucro cesante.
+
+En ningún caso la responsabilidad total excederá el monto pagado por el usuario en los últimos 30 días.
+
+6. MODIFICACIONES
+NovaStream se reserva el derecho de modificar estos términos, precios y funcionalidades en cualquier momento. El uso continuado implica aceptación de los cambios.
+
+7. RESOLUCIÓN DE CONFLICTOS
+Cualquier disputa será resuelta mediante arbitraje vinculante, renunciando las partes a acciones judiciales colectivas.`;
+
+export default SAMPLE_NOVASTREAM;
