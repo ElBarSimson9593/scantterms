@@ -1,7 +1,15 @@
 # ScanTerms
 
+[![Expo](https://img.shields.io/badge/Expo-56-000020)](https://expo.dev/)
+[![React Native](https://img.shields.io/badge/React%20Native-TypeScript-61DAFB)](https://reactnative.dev/)
+[![FastAPI](https://img.shields.io/badge/FastAPI-009688)](https://fastapi.tiangolo.com/)
+[![Gemini](https://img.shields.io/badge/Gemini-2.5%20Flash-4285F4)](https://ai.google.dev/)
+
 App **React Native (Expo)** + API **FastAPI** para analizar términos y condiciones con **Gemini** y detectar alertas de riesgo.
 
+**Repositorio:** [github.com/ElBarSimson9593/scantterms](https://github.com/ElBarSimson9593/scantterms)
+
+> Proyecto de portafolio — LegalTech / defensa del consumidor  
 > Análisis orientativo por IA. No constituye asesoría legal.
 
 ## Qué hace
@@ -10,6 +18,24 @@ App **React Native (Expo)** + API **FastAPI** para analizar términos y condicio
 2. La API analiza con Gemini 2.5 Flash.
 3. Ves **nivel de riesgo**, **resumen** y **alertas rojas** por categoría.
 4. Copias o compartes el resultado.
+
+## Capturas
+
+### Pantalla principal
+
+![Pantalla principal](docs/screenshots/home.png)
+
+### Entrada de texto (ejemplo ficticio NovaStream)
+
+![Entrada de T&C](docs/screenshots/input-ejemplo.png)
+
+### Resultado — resumen y nivel de riesgo
+
+![Resumen del análisis](docs/screenshots/resumen.png)
+
+### Alertas rojas por categoría
+
+![Alertas rojas](docs/screenshots/alertas.png)
 
 ## Estructura
 
