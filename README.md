@@ -92,6 +92,15 @@ Content-Type: application/json
 { "text": "..." }
 ```
 
+## Deploy en Render (free tier)
+
+1. [render.com](https://render.com) → **New** → **Blueprint** → repo `scantterms`.
+2. Añade `GEMINI_API_KEY` cuando lo pida.
+3. Tras el deploy, prueba `https://TU-SERVICIO.onrender.com/health`.
+4. En la app móvil (`mobile/.env`): `EXPO_PUBLIC_API_URL=https://TU-SERVICIO.onrender.com`
+
+> El free tier se duerme tras inactividad (~30–60 s al despertar). Sin costo obligatorio.
+
 ## Samples de demo
 
 - [docs/samples/ficticio-novastream.txt](docs/samples/ficticio-novastream.txt)
