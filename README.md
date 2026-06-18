@@ -7,10 +7,12 @@
 
 App **React Native (Expo)** + API **FastAPI** para analizar términos y condiciones con **Gemini** y detectar alertas de riesgo.
 
+**Demo en vivo (API):** [scanterms-api.onrender.com/docs](https://scanterms-api.onrender.com/docs)  
 **Repositorio:** [github.com/ElBarSimson9593/scantterms](https://github.com/ElBarSimson9593/scantterms)
 
 > Proyecto de portafolio — LegalTech / defensa del consumidor  
-> Análisis orientativo por IA. No constituye asesoría legal.
+> Análisis orientativo por IA. No constituye asesoría legal.  
+> La app móvil se muestra en capturas; la API desplegada se prueba en Swagger.
 
 ## Qué hace
 
@@ -18,6 +20,16 @@ App **React Native (Expo)** + API **FastAPI** para analizar términos y condicio
 2. La API analiza con Gemini 2.5 Flash.
 3. Ves **nivel de riesgo**, **resumen** y **alertas rojas** por categoría.
 4. Copias o compartes el resultado.
+
+## Demo en vivo
+
+Prueba la **API desplegada en Render** desde Swagger (pega un texto de T&C y ejecuta `POST /api/analyze`):
+
+**[https://scanterms-api.onrender.com/docs](https://scanterms-api.onrender.com/docs)**
+
+Health check: [scanterms-api.onrender.com/health](https://scanterms-api.onrender.com/health)
+
+> El free tier se duerme tras inactividad (~30–60 s al despertar). La app móvil requiere Expo Go en local; las capturas abajo muestran el flujo completo.
 
 ## Capturas
 
@@ -96,8 +108,8 @@ Content-Type: application/json
 
 1. [render.com](https://render.com) → **New** → **Blueprint** → repo `scantterms`.
 2. Añade `GEMINI_API_KEY` cuando lo pida.
-3. Tras el deploy, prueba `https://TU-SERVICIO.onrender.com/health`.
-4. En la app móvil (`mobile/.env`): `EXPO_PUBLIC_API_URL=https://TU-SERVICIO.onrender.com`
+3. Tras el deploy, prueba [scanterms-api.onrender.com/health](https://scanterms-api.onrender.com/health).
+4. En la app móvil (`mobile/.env`): `EXPO_PUBLIC_API_URL=https://scanterms-api.onrender.com`
 
 > El free tier se duerme tras inactividad (~30–60 s al despertar). Sin costo obligatorio.
 
