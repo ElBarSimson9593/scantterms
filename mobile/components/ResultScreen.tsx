@@ -14,6 +14,7 @@ import {
   DISCLAIMER,
   RISK_COLORS,
 } from "../lib/constants";
+import { theme } from "../lib/theme";
 import type { AnalyzeResult } from "../lib/types";
 
 type Props = {
@@ -49,7 +50,7 @@ function formatReport(result: AnalyzeResult): string {
 
 export default function ResultScreen({ result, onBack }: Props) {
   const report = useMemo(() => formatReport(result), [result]);
-  const riskColor = RISK_COLORS[result.risk_level] ?? "#f59e0b";
+  const riskColor = RISK_COLORS[result.risk_level] ?? theme.brand;
 
   async function copyReport() {
     await Clipboard.setStringAsync(report);
@@ -74,9 +75,7 @@ export default function ResultScreen({ result, onBack }: Props) {
         </Text>
       </View>
 
-      <Text style={styles.model}>
-        Modelo: {result.model}
-      </Text>
+      <Text style={styles.model}>Modelo: {result.model}</Text>
 
       <Text style={styles.sectionTitle}>Resumen</Text>
       {result.summary.map((item, index) => (
@@ -119,9 +118,14 @@ export default function ResultScreen({ result, onBack }: Props) {
 }
 
 const styles = StyleSheet.create({
-  scroll: { flex: 1, backgroundColor: "#09090b" },
+  scroll: { flex: 1, backgroundColor: theme.bg },
   content: { padding: 20, paddingBottom: 40 },
-  back: { color: "#a78bfa", fontSize: 14, fontWeight: "600", marginBottom: 16 },
+  back: {
+    color: theme.brandSoft,
+    fontSize: 14,
+    fontWeight: "600",
+    marginBottom: 16,
+  },
   riskPill: {
     alignSelf: "flex-start",
     borderRadius: 999,
@@ -129,52 +133,52 @@ const styles = StyleSheet.create({
     paddingVertical: 8,
     marginBottom: 8,
   },
-  riskText: { color: "#fff", fontWeight: "800", fontSize: 13 },
-  model: { color: "#71717a", fontSize: 12, marginBottom: 20 },
+  riskText: { color: theme.white, fontWeight: "800", fontSize: 13 },
+  model: { color: theme.textFaint, fontSize: 12, marginBottom: 20 },
   sectionTitle: {
-    color: "#fafafa",
+    color: theme.text,
     fontSize: 18,
     fontWeight: "700",
     marginTop: 8,
     marginBottom: 10,
   },
   bullet: {
-    color: "#d4d4d8",
+    color: theme.textMuted,
     fontSize: 14,
     lineHeight: 22,
     marginBottom: 6,
   },
-  empty: { color: "#a1a1aa", fontSize: 14, marginBottom: 12 },
+  empty: { color: theme.textSoft, fontSize: 14, marginBottom: 12 },
   alertCard: {
-    backgroundColor: "#18181b",
+    backgroundColor: theme.surface,
     borderLeftWidth: 4,
-    borderLeftColor: "#ef4444",
+    borderLeftColor: theme.alertBorder,
     borderRadius: 12,
     padding: 14,
     marginBottom: 10,
   },
   alertCategory: {
-    color: "#fca5a5",
+    color: theme.alertCategory,
     fontSize: 11,
     fontWeight: "700",
     textTransform: "uppercase",
     marginBottom: 4,
   },
   alertTitle: {
-    color: "#fafafa",
+    color: theme.text,
     fontSize: 15,
     fontWeight: "700",
     marginBottom: 6,
   },
-  alertExcerpt: { color: "#a1a1aa", fontSize: 13, lineHeight: 20 },
+  alertExcerpt: { color: theme.textSoft, fontSize: 13, lineHeight: 20 },
   actions: { flexDirection: "row", gap: 10, marginTop: 20, marginBottom: 16 },
   actionButton: {
     flex: 1,
-    backgroundColor: "#27272a",
+    backgroundColor: theme.surfaceMuted,
     borderRadius: 12,
     paddingVertical: 14,
     alignItems: "center",
   },
-  actionText: { color: "#fafafa", fontWeight: "700" },
-  disclaimer: { color: "#71717a", fontSize: 11, lineHeight: 16 },
+  actionText: { color: theme.text, fontWeight: "700" },
+  disclaimer: { color: theme.textFaint, fontSize: 11, lineHeight: 16 },
 });

@@ -1,0 +1,20 @@
+/** Paleta ScanTerms — legal / precaución (ámbar sobre navy, no violeta). */
+export const theme = {
+  bg: "#0f172a",
+  surface: "#1e293b",
+  surfaceMuted: "#334155",
+  border: "#475569",
+  borderMuted: "#64748b",
+  text: "#f8fafc",
+  textMuted: "#cbd5e1",
+  textSoft: "#94a3b8",
+  textFaint: "#64748b",
+  brand: "#f59e0b",
+  brandStrong: "#d97706",
+  brandSoft: "#fcd34d",
+  error: "#fca5a5",
+  errorBg: "#450a0a",
+  alertBorder: "#ef4444",
+  alertCategory: "#fdba74",
+  white: "#ffffff",
+} as const;

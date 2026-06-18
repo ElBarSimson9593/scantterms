@@ -15,6 +15,7 @@ import {
   MIN_TEXT_CHARS,
 } from "../lib/constants";
 import SAMPLE_NOVASTREAM from "../lib/sample";
+import { theme } from "../lib/theme";
 
 type Props = {
   onAnalyze: (text: string) => void;
@@ -35,6 +36,7 @@ export default function HomeScreen({
       contentContainerStyle={styles.content}
       keyboardShouldPersistTaps="handled"
     >
+      <View style={styles.heroAccent} />
       <Text style={styles.badge}>ScanTerms</Text>
       <Text style={styles.title}>Lee antes de aceptar</Text>
       <Text style={styles.subtitle}>
@@ -52,7 +54,7 @@ export default function HomeScreen({
         multiline
         textAlignVertical="top"
         placeholder="Pega aquí el texto completo o una sección relevante…"
-        placeholderTextColor="#71717a"
+        placeholderTextColor={theme.textFaint}
         value={text}
         onChangeText={(value) => setText(value.slice(0, MAX_TEXT_CHARS))}
       />
@@ -73,7 +75,7 @@ export default function HomeScreen({
         onPress={() => onAnalyze(text.trim())}
       >
         {loading ? (
-          <ActivityIndicator color="#fff" />
+          <ActivityIndicator color={theme.white} />
         ) : (
           <Text style={styles.primaryButtonText}>Analizar con Gemini</Text>
         )}
@@ -85,10 +87,17 @@ export default function HomeScreen({
 }
 
 const styles = StyleSheet.create({
-  scroll: { flex: 1, backgroundColor: "#09090b" },
+  scroll: { flex: 1, backgroundColor: theme.bg },
   content: { padding: 20, paddingBottom: 40 },
+  heroAccent: {
+    width: 48,
+    height: 4,
+    borderRadius: 999,
+    backgroundColor: theme.brand,
+    marginBottom: 16,
+  },
   badge: {
-    color: "#a78bfa",
+    color: theme.brandSoft,
     fontSize: 12,
     fontWeight: "700",
     letterSpacing: 1.2,
@@ -96,40 +105,46 @@ const styles = StyleSheet.create({
     marginBottom: 8,
   },
   title: {
-    color: "#fafafa",
+    color: theme.text,
     fontSize: 28,
     fontWeight: "800",
     marginBottom: 8,
   },
   subtitle: {
-    color: "#a1a1aa",
+    color: theme.textSoft,
     fontSize: 15,
     lineHeight: 22,
     marginBottom: 16,
   },
   disclaimerBox: {
-    backgroundColor: "#18181b",
-    borderColor: "#3f3f46",
+    backgroundColor: theme.surface,
+    borderColor: theme.brandStrong,
     borderWidth: 1,
+    borderLeftWidth: 4,
     borderRadius: 12,
     padding: 12,
     marginBottom: 16,
   },
-  disclaimer: { color: "#d4d4d8", fontSize: 12, lineHeight: 18 },
-  label: { color: "#e4e4e7", fontSize: 14, fontWeight: "600", marginBottom: 8 },
+  disclaimer: { color: theme.textMuted, fontSize: 12, lineHeight: 18 },
+  label: {
+    color: theme.textMuted,
+    fontSize: 14,
+    fontWeight: "600",
+    marginBottom: 8,
+  },
   input: {
     minHeight: 220,
-    backgroundColor: "#18181b",
-    borderColor: "#3f3f46",
+    backgroundColor: theme.surface,
+    borderColor: theme.border,
     borderWidth: 1,
     borderRadius: 14,
-    color: "#f4f4f5",
+    color: theme.text,
     fontSize: 14,
     lineHeight: 20,
     padding: 14,
   },
   counter: {
-    color: "#71717a",
+    color: theme.textFaint,
     fontSize: 12,
     textAlign: "right",
     marginTop: 6,
@@ -142,21 +157,25 @@ const styles = StyleSheet.create({
     paddingHorizontal: 12,
     borderRadius: 10,
     borderWidth: 1,
-    borderColor: "#52525b",
+    borderColor: theme.borderMuted,
   },
-  sampleButtonText: { color: "#d4d4d8", fontSize: 13, fontWeight: "600" },
+  sampleButtonText: {
+    color: theme.textMuted,
+    fontSize: 13,
+    fontWeight: "600",
+  },
   primaryButton: {
-    backgroundColor: "#7c3aed",
+    backgroundColor: theme.brandStrong,
     borderRadius: 14,
     paddingVertical: 16,
     alignItems: "center",
   },
   buttonDisabled: { opacity: 0.6 },
-  primaryButtonText: { color: "#fff", fontSize: 16, fontWeight: "700" },
+  primaryButtonText: { color: theme.white, fontSize: 16, fontWeight: "700" },
   error: {
-    color: "#fca5a5",
+    color: theme.error,
     marginTop: 12,
-    backgroundColor: "#450a0a",
+    backgroundColor: theme.errorBg,
     borderRadius: 10,
     padding: 12,
     fontSize: 13,

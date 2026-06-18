@@ -5,6 +5,7 @@ import { SafeAreaProvider, SafeAreaView } from "react-native-safe-area-context";
 import HomeScreen from "./components/HomeScreen";
 import ResultScreen from "./components/ResultScreen";
 import { analyzeTerms } from "./lib/api";
+import { theme } from "./lib/theme";
 import type { AnalyzeResult } from "./lib/types";
 
 export default function App() {
@@ -35,7 +36,7 @@ export default function App() {
 
   return (
     <SafeAreaProvider>
-      <SafeAreaView style={{ flex: 1, backgroundColor: "#09090b" }}>
+      <SafeAreaView style={{ flex: 1, backgroundColor: theme.bg }}>
         <StatusBar style="light" />
         {screen === "home" || !result ? (
           <HomeScreen
