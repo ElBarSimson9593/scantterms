@@ -49,6 +49,10 @@ Health check: [scanterms-api.onrender.com/health](https://scanterms-api.onrender
 
 ![Alertas rojas](docs/screenshots/alertas.png)
 
+### Copiar y compartir resultado
+
+![Acciones Copiar / Compartir](docs/screenshots/acciones.png)
+
 ## Estructura
 
 ```
