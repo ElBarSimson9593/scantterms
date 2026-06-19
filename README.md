@@ -138,11 +138,11 @@ La app incluye botón **Cargar ejemplo ficticio**.
 
 ```mermaid
 flowchart LR
-  A[Expo Mobile] -->|POST /api/analyze| B[FastAPI Render]
-  B --> C[Gemini 2.5 Flash]
+  A["Expo Mobile"] -->|"POST /api/analyze"| B["FastAPI Render"]
+  B --> C["Gemini 2.5 Flash"]
   C --> B
   B -->|JSON| A
-  A --> D[Riesgo + alertas]
+  A --> D["Riesgo + alertas"]
 ```
 
 > `GEMINI_API_KEY` solo en el backend — no en la app móvil.
