@@ -85,15 +85,20 @@ Verifica: http://localhost:8000/health
 ```bash
 cd mobile
 cp .env.example .env
-# EXPO_PUBLIC_API_URL = IP de tu PC en la red local
-# Ejemplo: http://192.168.1.84:8000
-# Emulador Android: http://10.0.2.2:8000
-
 npm install
-npx expo start
+npx expo start -c
 ```
 
-Escanea el QR con **Expo Go** o presiona `a` para emulador Android.
+**`mobile/.env`** — elige una opción:
+
+| Caso | `EXPO_PUBLIC_API_URL` |
+|------|------------------------|
+| Celular físico sin API local | `https://scanterms-api.onrender.com` (default) |
+| Celular + API en tu PC | `http://192.168.1.84:8001` (tu IP local) |
+| Emulador Android | `http://10.0.2.2:8001` |
+
+> **No uses `localhost` en el celular** — apunta al teléfono, no a tu PC.  
+> Tras cambiar `.env`, reinicia con `npx expo start -c`.
 
 ## API
 

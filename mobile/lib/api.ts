@@ -1,7 +1,9 @@
-import { API_URL } from "./constants";
+import { API_URL, assertApiUrlReachable } from "./constants";
 import type { AnalyzeResult } from "./types";
 
 export async function analyzeTerms(text: string): Promise<AnalyzeResult> {
+  assertApiUrlReachable();
+
   const response = await fetch(`${API_URL}/api/analyze`, {
     method: "POST",
     headers: { "Content-Type": "application/json" },
