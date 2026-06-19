@@ -17,8 +17,9 @@ export function assertApiUrlReachable(): void {
     /localhost|127\.0\.0\.1/i.test(API_URL)
   ) {
     throw new Error(
-      "En el celular no funciona localhost. Edita mobile/.env con la IP de tu PC " +
-        "(ej. http://192.168.1.84:8001) o usa la API en Render, y reinicia: npx expo start -c"
+      "localhost no es válido en dispositivos físicos. Configurar EXPO_PUBLIC_API_URL " +
+        "con la IP LAN del host (ej. http://192.168.1.84:8001) o la API en Render, " +
+        "y reiniciar Metro con: npx expo start -c"
     );
   }
 }

@@ -23,13 +23,13 @@ App **React Native (Expo)** + API **FastAPI** para analizar términos y condicio
 
 ## Demo en vivo
 
-Prueba la **API desplegada en Render** desde Swagger (pega un texto de T&C y ejecuta `POST /api/analyze`):
+Prueba la **API desplegada en Render** desde Swagger (texto de T&C de ejemplo en `POST /api/analyze`):
 
 **[https://scanterms-api.onrender.com/docs](https://scanterms-api.onrender.com/docs)**
 
 Health check: [scanterms-api.onrender.com/health](https://scanterms-api.onrender.com/health)
 
-> El free tier se duerme tras inactividad (~30–60 s al despertar). La app móvil requiere Expo Go en local; las capturas abajo muestran el flujo completo.
+> El free tier de Render entra en sleep tras inactividad (~30–60 s al despertar).
 
 ## Capturas
 
@@ -74,7 +74,7 @@ ScanTerms/
 ```bash
 cd api
 cp .env.example .env
-# Edita .env con tu GEMINI_API_KEY
+# Configurar GEMINI_API_KEY en .env
 
 python -m venv .venv
 .venv\Scripts\activate        # Windows
@@ -82,7 +82,7 @@ pip install -r requirements.txt
 uvicorn app.main:app --reload --host 0.0.0.0 --port 8000
 ```
 
-Verifica: http://localhost:8000/health
+Health check: http://localhost:8000/health
 
 ## 2. Mobile (Expo)
 
@@ -93,16 +93,15 @@ npm install
 npx expo start -c
 ```
 
-**`mobile/.env`** — elige una opción:
+**`mobile/.env`** — opciones de `EXPO_PUBLIC_API_URL`:
 
-| Caso | `EXPO_PUBLIC_API_URL` |
-|------|------------------------|
+| Escenario | Valor |
+|-----------|--------|
 | Celular físico sin API local | `https://scanterms-api.onrender.com` (default) |
-| Celular + API en tu PC | `http://192.168.1.84:8001` (tu IP local) |
+| Celular físico + API local | `http://<IP_LAN>:8001` (IP del host en la red Wi‑Fi) |
 | Emulador Android | `http://10.0.2.2:8001` |
 
-> **No uses `localhost` en el celular** — apunta al teléfono, no a tu PC.  
-> Tras cambiar `.env`, reinicia con `npx expo start -c`.
+> En dispositivos físicos, `localhost` apunta al teléfono, no al host de desarrollo. Tras modificar `.env`, reiniciar Metro con `npx expo start -c`.
 
 ## API
 
@@ -115,12 +114,10 @@ Content-Type: application/json
 
 ## Deploy en Render (free tier)
 
-1. [render.com](https://render.com) → **New** → **Blueprint** → repo `scantterms`.
-2. Añade `GEMINI_API_KEY` cuando lo pida.
-3. Tras el deploy, prueba [scanterms-api.onrender.com/health](https://scanterms-api.onrender.com/health).
-4. En la app móvil (`mobile/.env`): `EXPO_PUBLIC_API_URL=https://scanterms-api.onrender.com`
-
-> El free tier se duerme tras inactividad (~30–60 s al despertar). Sin costo obligatorio.
+1. En [render.com](https://render.com): **New** → **Blueprint** → conectar el repo `scantterms`.
+2. Configurar `GEMINI_API_KEY` en las variables de entorno del Blueprint.
+3. Verificar [scanterms-api.onrender.com/health](https://scanterms-api.onrender.com/health) tras el deploy.
+4. En `mobile/.env`: `EXPO_PUBLIC_API_URL=https://scanterms-api.onrender.com`
 
 ## Samples de demo
 
